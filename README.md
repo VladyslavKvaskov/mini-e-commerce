@@ -2,10 +2,10 @@
 This is a mini e-commerce web app. Here I used only front-end.
 There you can see a button "Admin Client," which I use to toggle between admin and client pages. 
 
-On the admin page, you can: 
-  -add new products
-  -edit products
-  -delete products
+On the admin page, you can:<br/>
+  -add new products<br/>
+  -edit products<br/>
+  -delete products<br/>
   
 On the client page, you can:
   -add products to a cart
