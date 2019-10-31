@@ -3,14 +3,14 @@ This is a mini e-commerce web app. Here I used only front-end.
 There you can see a button "Admin Client," which I use to toggle between admin and client pages. 
 <br/>
 On the admin page, you can:<br/>
-  -add new products<br/>
-  -edit products<br/>
-  -delete products<br/>
+      -add new products<br/>
+      -edit products<br/>
+      -delete products<br/>
 <br/>
 On the client page, you can:<br/>
-  -add products to a cart<br/>
-  -view products inside of the cart<br/>
-  -delete products from the cart<br/>
+      -add products to a cart<br/>
+      -view products inside of the cart<br/>
+      -delete products from the cart<br/>
  <br/>
  Also, notice what happens when you go back and forth in the history by using the browser's arrows.
  <br/>
