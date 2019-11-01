@@ -1,4 +1,7 @@
 # mini-e-commerce
+Visit https://m-store-calm-uguisu.now.sh/ for the demo!
+Visit https://www.facebook.com/vlad.kvaskov/videos/2521147621310383/ to view video of the demo
+
 
 This is a mini e-commerce web app. Here I used only front-end.
 There you can see a button "Admin Client," which I use to toggle between admin and client pages.<br><br><br>
