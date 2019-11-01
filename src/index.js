@@ -149,7 +149,6 @@ function getAllProducts(){
   fetch('https://5db82951177b350014ac76e3.mockapi.io/products')
   .then(response => response.json())
   .then(data => {
-    console.log(data);
     clientProducts.innerHTML = '';
     adminProducts.innerHTML = '';
 
@@ -183,7 +182,6 @@ function getAllProducts(){
                     update_url('?page=admin&&form=shown');
                     productToEditID = ${d.id};
                     form_method = 'PUT';
-                    console.log(form_method);
                     document.getElementById('form').classList.add('show-form');
                     codeInput.value = ${d.code};
                     nameInput.value = '${d.name}';
@@ -214,7 +212,6 @@ function getAllProducts(){
                     update_url('?page=admin&&form=shown');
                     productToEditID = ${d.id};
                     form_method = 'PUT';
-                    console.log(form_method);
                     document.getElementById('form').classList.add('show-form');
                     codeInput.value = ${d.code};
                     nameInput.value = '${d.name}';
@@ -319,9 +316,7 @@ function addItemToCart(json){
 
 function removeItemFromCart(json, productToRemoveFromDOM){
   let product_info = JSON.parse(json.replace(/-br-br-br/g, '\"'));
-  console.log(product_info);
   cartItems.splice(cartItems.indexOf(product_info), 1);
-  console.log(cartItems);
   localStorage.setItem('cart-items', JSON.stringify(cartItems));
   productToRemoveFromDOM.parentElement.parentElement.remove();
   priceToPay -= parseInt(product_info.price, 10);
