@@ -55,7 +55,7 @@ acBttn.onclick = () =>{
 }
 
 addItem.onclick = () =>{
-  update_url('/?page=admin&&form=shown');
+  update_url('/?page=admin&form=shown');
   form.classList.add('show-form');
   form_method = 'POST';
 }
@@ -72,7 +72,7 @@ closeCartBttn.onclick = () =>{
 
 cart.onclick = () =>{
   cartPage.classList.add('show-form');
-  update_url('/?page=client&&cart=shown');
+  update_url('/?page=client&cart=shown');
 }
 
 submitBttn.onclick = async () =>{
@@ -298,7 +298,7 @@ function addItemToCart(json){
   let itemsInCart = JSON.parse(localStorage.getItem('cart-items'));
 
   for(let cartItem of cartItems){
-    cartProducts.innerHTML += `
+    cartProducts.insertAdjacentHTML('beforeend', `
       <div class="card">
         <div>
           <img class="prod-img" src="${cartItem.img}">
@@ -310,7 +310,7 @@ function addItemToCart(json){
           <button type="button" class="remove-from-cart" onclick="removeItemFromCart(\`${JSON.stringify(cartItem).replace(/"/g, '-br-br-br')}\`, this);">Remove</button>
         </div>
       </div>
-    `;
+    `);
   }
 }
 
