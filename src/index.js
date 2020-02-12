@@ -16,7 +16,7 @@ window.onload = () =>{
     cartProducts.innerHTML = '';
     for(let cartItem of cartItems){
       priceToPay += parseInt(cartItem.price, 10);
-      cartProducts.innerHTML += `
+      cartProducts.insertAdjacentHTML('beforeend', `
         <div class="card">
           <div>
             <img class="prod-img" src="${cartItem.img}">
@@ -28,7 +28,7 @@ window.onload = () =>{
             <button type="button" class="remove-from-cart" onclick="removeItemFromCart(\`${JSON.stringify(cartItem).replace(/"/g, '-br-br-br')}\`, this);">Remove</button>
           </div>
         </div>
-      `;
+      `);
     }
     priceCart.innerText = `${priceToPay}$`;
     total.innerText = `Total: ${priceToPay}$`;
@@ -154,7 +154,7 @@ function getAllProducts(){
 
     for(let d of data){
       if(d.available){
-        clientProducts.innerHTML += `
+        clientProducts.insertAdjacentHTML('beforeend', `
           <div class="card">
             <div>
               <img class="prod-img" src="${d.img}">
@@ -166,9 +166,9 @@ function getAllProducts(){
               <button type="button" class="add-to-cart" onclick="addItemToCart(\`${JSON.stringify(d).replace(/"/g, '-br-br-br')}\`);">Add to Cart</button>
             </div>
           </div>
-        `;
+        `);
 
-        adminProducts.innerHTML += `
+        adminProducts.insertAdjacentHTML('beforeend', `
           <div class="card admin-card">
             <div>
               <img class="prod-img" src="${d.img}">
@@ -179,7 +179,7 @@ function getAllProducts(){
               <div class="priceTag">${d.price}$</div>
               <div class="admin-bttns">
                 <button type="button" class="edit-bttn" onclick="
-                    update_url('?page=admin&&form=shown');
+                    update_url('?page=admin&form=shown');
                     productToEditID = ${d.id};
                     form_method = 'PUT';
                     document.getElementById('form').classList.add('show-form');
@@ -194,10 +194,10 @@ function getAllProducts(){
               </div>
             </div>
           </div>
-        `;
+        `);
       }
       else {
-        adminProducts.innerHTML += `
+        adminProducts.insertAdjacentHTML('beforeend', `
           <div class="card admin-card">
             <div>
               <img class="prod-img" src="${d.img}">
@@ -209,7 +209,7 @@ function getAllProducts(){
               <div class="not-available">Not Available</div>
               <div class="admin-bttns">
                 <button type="button" class="edit-bttn" onclick="
-                    update_url('?page=admin&&form=shown');
+                    update_url('?page=admin&form=shown');
                     productToEditID = ${d.id};
                     form_method = 'PUT';
                     document.getElementById('form').classList.add('show-form');
@@ -224,7 +224,7 @@ function getAllProducts(){
               </div>
             </div>
           </div>
-        `;
+        `);
       }
     }
     if(!getQuery('form'))
